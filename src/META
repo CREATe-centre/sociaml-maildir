@@ -1,7 +1,7 @@
 # OASIS_START
-# DO NOT EDIT (digest: b023d64273c2c9fe9bce33415ddca11e)
-version = "0.4.0"
-description = "TODO"
+# DO NOT EDIT (digest: 49ca977ab9094b3c9efdf0079fa6c0c9)
+version = "0.1.0"
+description = "Lightweight Maildir wrapper"
 requires = "lwt"
 archive(byte) = "sociaml_maildir.cma"
 archive(byte, plugin) = "sociaml_maildir.cma"
@@ -9,8 +9,8 @@ archive(native) = "sociaml_maildir.cmxa"
 archive(native, plugin) = "sociaml_maildir.cmxs"
 exists_if = "sociaml_maildir.cma"
 package "irminstore" (
- version = "0.4.0"
- description = "TODO"
+ version = "0.1.0"
+ description = "Lightweight Maildir wrapper"
  requires = "lwt irmin sociaml_maildir"
  archive(byte) = "irminstore.cma"
  archive(byte, plugin) = "irminstore.cma"
@@ -20,8 +20,8 @@ package "irminstore" (
 )
 
 package "filesystem" (
- version = "0.4.0"
- description = "TODO"
+ version = "0.1.0"
+ description = "Lightweight Maildir wrapper"
  requires = "lwt maildir sociaml_maildir"
  archive(byte) = "filesystem.cma"
  archive(byte, plugin) = "filesystem.cma"
