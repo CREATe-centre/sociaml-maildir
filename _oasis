@@ -1,0 +1,64 @@
+OASISFormat: 0.4
+Name:        sociaml-maildir
+Version:     0.1.0
+Synopsis:    Lightweight Maildir wrapper
+Description: 
+  Provides a very lightweight wrapper around filesystem or Irmin
+  implementations of a Maildir.
+Authors:     Dominic Price
+Copyrights:  (C) 2014 Horizon Digital Economy Research
+LicenseFile: LICENSE
+License:     ISC
+Homepage:    https://github.com/dominicjprice/sociaml-maildir
+Plugins:     META (0.4), DevFiles (0.4)
+BuildTools:  ocamlbuild, ocamldoc, make, awk
+
+Library sociaml_maildir
+  Path:           src
+  Findlibname:    sociaml_maildir
+  Modules:        Sociaml_maildir
+  Pack:           false
+  BuildDepends:
+    lwt
+  
+Library filesystem
+  Path:           src
+  Findlibname:    filesystem
+  FindlibParent:  sociaml_maildir
+  Modules:        Filesystem
+  Pack:           false
+  BuildDepends:
+    lwt,
+    maildir,
+    sociaml_maildir
+    
+Library irminstore
+  Path:           src
+  Findlibname:    irminstore
+  FindlibParent:  sociaml_maildir
+  Modules:        Irminstore
+  Pack:           false
+  BuildDepends:
+    lwt,
+    irmin,
+    sociaml_maildir
+    
+Document sociaml_maildir
+  Type:           ocamlbuild (0.1.0)
+  Title:          sociaml-maildir Reference
+  Authors:        Dominic Price
+  Format:         HTML
+  Index:          index.html
+  InstallDir:     $htmldir/sociaml-maildir
+  XOCamlbuildPath: 
+    src
+  XOCamlbuildLibraries: 
+    sociaml_maildir,
+    sociaml_maildir.filesystem,
+    sociaml_maildir.irminstore
+
+SourceRepository head
+  Type:           git
+  Location:       https://github.com/dominicjprice/sociaml-maildir.git
+  Browser:        https://github.com/dominicjprice/sociaml-maildir
+  Branch:         master    

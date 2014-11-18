@@ -1,0 +1,33 @@
+# OASIS_START
+# DO NOT EDIT (digest: b023d64273c2c9fe9bce33415ddca11e)
+version = "0.4.0"
+description = "TODO"
+requires = "lwt"
+archive(byte) = "sociaml_maildir.cma"
+archive(byte, plugin) = "sociaml_maildir.cma"
+archive(native) = "sociaml_maildir.cmxa"
+archive(native, plugin) = "sociaml_maildir.cmxs"
+exists_if = "sociaml_maildir.cma"
+package "irminstore" (
+ version = "0.4.0"
+ description = "TODO"
+ requires = "lwt irmin sociaml_maildir"
+ archive(byte) = "irminstore.cma"
+ archive(byte, plugin) = "irminstore.cma"
+ archive(native) = "irminstore.cmxa"
+ archive(native, plugin) = "irminstore.cmxs"
+ exists_if = "irminstore.cma"
+)
+
+package "filesystem" (
+ version = "0.4.0"
+ description = "TODO"
+ requires = "lwt maildir sociaml_maildir"
+ archive(byte) = "filesystem.cma"
+ archive(byte, plugin) = "filesystem.cma"
+ archive(native) = "filesystem.cmxa"
+ archive(native, plugin) = "filesystem.cmxs"
+ exists_if = "filesystem.cma"
+)
+# OASIS_STOP
+
